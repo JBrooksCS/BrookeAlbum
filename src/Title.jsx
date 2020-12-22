@@ -3,16 +3,13 @@ import React, { Component } from "react";
 
 class Title extends Component{
 
-    render(){
-        
-       
 
+
+    render(){
         return (
             <>
                
-               <div>
-                   <h1>--- Brooke and Jason ---</h1>
-               </div>
+               
                 
             </>
         );
