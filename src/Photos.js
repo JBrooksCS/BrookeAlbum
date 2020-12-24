@@ -122,7 +122,7 @@ class Photos extends Component{
                    <h1 className="fire-text" onClick={this.refreshState} style={{cursor : "pointer"}}> -  Brooke and Jason  - </h1>
                    <img className="shake-rotate shake-constant horns2" src='horns.png'></img>
                    </div>
-                   <marquee behavior="alternate" bgcolor="red">~ BANGIN' SINCE NOVEMBER 2019 ~</marquee>
+                   <marquee behavior="alternate" bgcolor="red">~ KNOCKIN' BOOTS SINCE NOVEMBER 2019 ~</marquee>
 
                 {isMovie ?
                     <div class="item">
