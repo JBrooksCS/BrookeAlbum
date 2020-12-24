@@ -37,7 +37,8 @@ button, h1{
 .item {
   width: 40%;
   
-  max-width: 700px;
+  max-width: 350px;
+  
   display: inline-block;
   
   filter: grayscale(100%);
