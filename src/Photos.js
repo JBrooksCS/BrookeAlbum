@@ -116,8 +116,8 @@ class Photos extends Component{
     
         return (
             <>
-                    <div className="titleBar">
-                   <img className="horns shake-rotate shake-constant" src='horns.png'></img>
+                    <div  className="titleBar">
+                   <img  className="horns shake-rotate shake-constant" src='horns.png'></img>
                    
                    <h1 className="fire-text" onClick={this.refreshState} style={{cursor : "pointer"}}> -  Brooke and Jason  - </h1>
                    <img className="shake-rotate shake-constant horns2" src='horns.png'></img>
