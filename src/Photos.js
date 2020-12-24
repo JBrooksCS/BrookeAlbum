@@ -541,7 +541,7 @@ class Photos extends Component{
 
 
                 <div>
-                   <h1 onClick={this.refreshState} style={{cursor : "pointer"}}>--- Brooke and Jason ---</h1>
+                   <h1 onClick={this.refreshState} style={{cursor : "pointer"}}>- Brooke and Jason -</h1>
                </div>
 
                 {isMovie ?
