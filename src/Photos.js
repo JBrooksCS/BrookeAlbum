@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import All_Images from "./images/ImageList"
-
+import TestVideo from './images/BrookeAndJason/Jun 08, 2020.mp4'
 
 
 class Photos extends Component{
@@ -27,27 +27,28 @@ class Photos extends Component{
         
         var imageObject = All_Images[this.getRandomInt(this.state.totalPhotos)]
         var img = imageObject.image
+        console.log("imageObject.image = ", img)
         var date = imageObject.date.substr(0,12)
         var type = img.substr(img.length - 3);
         var isMovie = false;
-        if (type === "mov")
+        if (type === "mp4")
         {
             isMovie = true;
         }
         var canvas = document.getElementById( 'canvas' ),
-		ctx = canvas.getContext( '2d' ),
-    canvas2 = document.getElementById( 'canvas2' ),
-    ctx2 = canvas2.getContext( '2d' ),
+		  ctx = canvas.getContext( '2d' ),
+      canvas2 = document.getElementById( 'canvas2' ),
+      ctx2 = canvas2.getContext( '2d' ),
 		// full screen dimensions
-		cw = window.innerWidth,
-		ch = window.innerHeight,
-    charArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
-    maxCharCount = 100,
-    fallingCharArr = [],
-    fontSize = 10,
-    maxColums = cw/(fontSize);
-    canvas.width = canvas2.width = cw;
-    canvas.height = canvas2.height = ch;
+		  cw = window.innerWidth,
+		  ch = window.innerHeight,
+      charArr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+      maxCharCount = 100,
+      fallingCharArr = [],
+      fontSize = 10,
+      maxColums = cw/(fontSize);
+      canvas.width = canvas2.width = cw;
+      canvas.height = canvas2.height = ch;
 
 
     function randomInt( min, max ) {
@@ -95,19 +96,14 @@ class Photos extends Component{
 
     var update = function()
     {
-
     ctx.fillStyle = "rgba(0,0,0,0.05)";
     ctx.fillRect(0,0,cw,ch);
-
     ctx2.clearRect(0,0,cw,ch);
-
       var i = fallingCharArr.length;
-
       while (i--) {
         fallingCharArr[i].draw(ctx);
         var v = fallingCharArr[i];
       }
-
       requestAnimationFrame(update);
     }
 
@@ -116,6 +112,7 @@ class Photos extends Component{
     
         return (
             <>
+
                     <div  className="titleBar">
                    <img  className="horns shake-rotate shake-constant" src='horns.png'></img>
                    
@@ -125,21 +122,21 @@ class Photos extends Component{
                    <marquee behavior="alternate" bgcolor="red">~ KNOCKIN' BOOTS SINCE NOVEMBER 2019 ~</marquee>
 
                 {isMovie ?
-                    <div class="item">
-                   <div class="polaroid">
+                    <div className="item">
+                   <div className="polaroid">
                        <video 
                        style={{maxWidth: "100%"}}
                        type="video/mov" controls>
                         <source src={img}>
                         </source>
                        </video>
-                <div class="caption">{date}</div>
+                <div className="caption">{date}</div>
                 </div>
                 </div>
                 :
-               <div class="item">
-                   <div class="polaroid"><img src = {img} ></img>
-                    <div class="caption">{date}</div>
+               <div className="item">
+                   <div className="polaroid"><img src = {img} ></img>
+                    <div className="caption">{date}</div>
                 </div>
                 </div>
     }
